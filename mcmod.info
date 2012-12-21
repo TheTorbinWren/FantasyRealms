@@ -1,0 +1,19 @@
+[
+{
+  "modid": "twStuff",
+  "name": "twStuff",
+  "description": "Raspberries, Darkwood Trees, Magic Wands & Staffs",
+  "version": "0.2.12",
+  "credits": "TheTorbinWren",
+  "logoFile": "/twStuff/gfx/logo.png",
+  "mcversion": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["TheTorbinWren"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
