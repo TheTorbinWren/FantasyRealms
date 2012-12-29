@@ -50,7 +50,7 @@
  
    <target name="stage" description="Stage resources into build directory">
       <copy todir="${build.dir}">
-         <fileset dir="${mcp.dir}/src/minecraft/twStuff" includes="mcmod.info" />
+         <fileset dir="${mcp.dir}/../twStuff" includes="mcmod.info" />
       </copy>
       <copy todir="${build.dir}/twStuff">
          <fileset dir="${mcp.dir}/reobf/minecraft/twStuff" excludes=".svn/**, *.txt" />
