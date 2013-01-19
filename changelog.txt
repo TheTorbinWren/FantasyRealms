@@ -1,3 +1,8 @@
+v0.2.13.1
+=========
+-updated to Minecraft 1.4.7
+-renamed mod to Fantasy Realms
+
 V0.2.12
 ======
 -updated to Minecraft 1.4.6
