@@ -32,16 +32,16 @@ implements IWorldGenerator {
 		int numDarkwoodTrees = 0;
 		
 		WorldGenOre quartzGen = new WorldGenOre(twConfig.genQuartz, BlockTw.ore.blockID, 0, random.nextInt(8), 4, 0, 60);
-		WorldGenOre copperGen = new WorldGenOre(twConfig.genCopper, BlockTw.ore.blockID, 1, random.nextInt(10)+20, 8, 0, 60);
+		WorldGenOre copperGen = new WorldGenOre(twConfig.genCopper, BlockTw.ore.blockID, 1, random.nextInt(10)+10, 6, 0, 60);
 		WorldGenOre silverGen = new WorldGenOre(twConfig.genSilver, BlockTw.ore.blockID, 2, random.nextInt(5)+10, 4, 0, 40);
 		WorldGenOre platinumGen = new WorldGenOre(twConfig.genPlatinum, BlockTw.ore.blockID, 3, random.nextInt(4), 8, 0, 20);
 		WorldGenOre coldironGen = new WorldGenOre(twConfig.genColdiron, BlockTw.ore.blockID, 4, 0, 6, 0, 25);
 		WorldGenOre mithralGen = new WorldGenOre(twConfig.genMithral, BlockTw.ore.blockID, 5, 0, 2, 0, 15);
 		WorldGenOre adamantineGen = new WorldGenOre(twConfig.genAdamantine, BlockTw.ore.blockID, 6, 0, 1, 0, 15);
-		WorldGenOre rubyGen = new WorldGenOre(twConfig.genRuby, BlockTw.ore.blockID, 7, random.nextInt(5), 2, 0, 40);
-		WorldGenOre sapphireGen = new WorldGenOre(twConfig.genSapphire, BlockTw.ore.blockID, 8, random.nextInt(5), 2, 0, 40);
-		WorldGenOre topazGen = new WorldGenOre(twConfig.genTopaz, BlockTw.ore.blockID, 9, random.nextInt(5), 2, 0, 40);
-		WorldGenOre amethystGen = new WorldGenOre(twConfig.genAmethyst, BlockTw.ore.blockID, 10, random.nextInt(8), 2, 0, 60);
+		WorldGenOre rubyGen = new WorldGenOre(twConfig.genRuby, BlockTw.ore.blockID, 7, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre sapphireGen = new WorldGenOre(twConfig.genSapphire, BlockTw.ore.blockID, 8, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre topazGen = new WorldGenOre(twConfig.genTopaz, BlockTw.ore.blockID, 9, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre amethystGen = new WorldGenOre(twConfig.genAmethyst, BlockTw.ore.blockID, 10, random.nextInt(5)+5, 4, 0, 60);
 		
 		BiomeGenBase biome = world.getBiomeGenForCoords(blockX, blockZ);
 		switch (biome.biomeID){
@@ -66,7 +66,7 @@ implements IWorldGenerator {
 		case 4: // forest
 		{
 			numBushes = random.nextInt(10)-2;
-			numDarkwoodTrees = random.nextInt(100)<2 ? 1 : 0;
+			numDarkwoodTrees = random.nextInt(250)<2 ? 1 : 0;
 			//System.out.println(numDarkwoodTrees);
 			break;
 		}
@@ -131,7 +131,7 @@ implements IWorldGenerator {
 		case 18: // forest hills
 		{
 			numBushes = random.nextInt(10)-2;
-			numDarkwoodTrees = random.nextInt(100)<2 ? 1 : 0;
+			numDarkwoodTrees = random.nextInt(250)<2 ? 1 : 0;
 			//System.out.println(numDarkwoodTrees);
 			break;
 		}
@@ -176,13 +176,13 @@ implements IWorldGenerator {
 		case 36: // ForestedHills
 		{
 			numBushes = random.nextInt(10)-2;
-			numDarkwoodTrees = random.nextInt(100)<2 ? 1 : 0;
+			numDarkwoodTrees = random.nextInt(250)<2 ? 1 : 0;
 			break;
 		}
 		case 37: // ForestedIsland
 		{
 			numBushes = random.nextInt(10)-2;
-			numDarkwoodTrees = random.nextInt(100)<2 ? 1 : 0;
+			numDarkwoodTrees = random.nextInt(250)<2 ? 1 : 0;
 			break;
 		}
 		case 38: // Glacier
@@ -286,7 +286,7 @@ implements IWorldGenerator {
 		case 59: // Woodlands
 		{
 			numBushes = random.nextInt(10)-2;
-			numDarkwoodTrees = random.nextInt(100)<2 ? 1 : 0;
+			numDarkwoodTrees = random.nextInt(250)<2 ? 1 : 0;
 			break;
 		}
 		// TODO add twilight forest support, ids 70-87

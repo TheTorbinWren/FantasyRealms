@@ -36,7 +36,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="twStuff", name="twStuff", version="0.2.12")
+@Mod(modid="FantasyRealms", name="TheTorbinWren's Fantasy Realms", version="0.2.13.2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FantasyRealms
 implements IFuelHandler
@@ -44,11 +44,11 @@ implements IFuelHandler
 	public static WorldGenCore worldGen = new WorldGenCore();
 	
     // The instance of your mod that Forge uses.
-	@Instance("twStuff")
+	@Instance("FantasyRealms")
 	public static FantasyRealms instance;
 	
 	// Says where the client and server 'proxy' code is loaded.
-	@SidedProxy(clientSide="twStuff.client.ClientProxy", serverSide="twStuff.CommonProxy")
+	@SidedProxy(clientSide="tw.FantasyRealms.client.ClientProxy", serverSide="tw.FantasyRealms.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@PreInit
