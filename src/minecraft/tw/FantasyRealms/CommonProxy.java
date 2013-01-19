@@ -9,10 +9,10 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonProxy 
 implements IGuiHandler {
-	public static String ITEMS_PNG = "/twStuff/gfx/items.png";
-	public static String BLOCK_PNG = "/twStuff/gfx/block.png";
-	public static String WANDS_PNG = "/twStuff/gfx/wands.png";
-	public static String STAFFS_PNG = "/twStuff/gfx/staffs.png";
+	public static String ITEMS_PNG = "/tw/FantasyRealms/gfx/items.png";
+	public static String BLOCK_PNG = "/tw/FantasyRealms/gfx/block.png";
+	public static String WANDS_PNG = "/tw/FantasyRealms/gfx/wands.png";
+	public static String STAFFS_PNG = "/tw/FantasyRealms/gfx/staffs.png";
 	
 	// Client stuff
 	public void registerRenderers () {

@@ -44,8 +44,8 @@ implements IArmorTextureProvider {
 	@Override
 	public String getArmorTextureFile(ItemStack itemstack) {
 		if (itemstack.getItemName() == ItemTw.darkwoodGreaves.getItemName()){
-			return "/twStuff/gfx/DarkwoodArmour_2.png";
+			return "/tw/FantasyRealms/gfx/DarkwoodArmour_2.png";
 		}
-		return "/twStuff/gfx/DarkwoodArmour_1.png";
+		return "/tw/FantasyRealms/gfx/DarkwoodArmour_1.png";
 	}
 }
