@@ -34,7 +34,7 @@ implements IWorldGenerator {
 		WorldGenOre quartzGen = new WorldGenOre(twConfig.genQuartz, BlockTw.ore.blockID, 0, random.nextInt(8), 4, 0, 60);
 		WorldGenOre copperGen = new WorldGenOre(twConfig.genCopper, BlockTw.ore.blockID, 1, random.nextInt(10)+10, 6, 0, 60);
 		WorldGenOre silverGen = new WorldGenOre(twConfig.genSilver, BlockTw.ore.blockID, 2, random.nextInt(5)+10, 4, 0, 40);
-		WorldGenOre platinumGen = new WorldGenOre(twConfig.genPlatinum, BlockTw.ore.blockID, 3, random.nextInt(4), 8, 0, 20);
+		WorldGenOre platinumGen = new WorldGenOre(twConfig.genPlatinum, BlockTw.ore.blockID, 3, random.nextInt(4), 4, 0, 20);
 		WorldGenOre coldironGen = new WorldGenOre(twConfig.genColdiron, BlockTw.ore.blockID, 4, 0, 6, 0, 25);
 		WorldGenOre mithralGen = new WorldGenOre(twConfig.genMithral, BlockTw.ore.blockID, 5, 0, 2, 0, 15);
 		WorldGenOre adamantineGen = new WorldGenOre(twConfig.genAdamantine, BlockTw.ore.blockID, 6, 0, 1, 0, 15);
