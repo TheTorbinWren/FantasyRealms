@@ -44,6 +44,15 @@ public class WorldGenDarkwood extends WorldGenerator{
 			int r = random.nextInt(4) + 3;
 			int fh = random.nextInt(2) + 2;
 			int fc = height - (fh / 2);
+			// following not working
+			if (world.isAirBlock(x-1, y+fc-fh-1, z))
+				this.setBlock(world, x-1, fc-fh-1, z, BlockTw.darkwoodLeaves.blockID);
+			if (world.isAirBlock(x, y+fc-fh-1, z-1))
+				this.setBlock(world, x, fc-fh-1, z-1, BlockTw.darkwoodLeaves.blockID);
+			if (world.isAirBlock(x+1, y+fc-fh-1, z))
+				this.setBlock(world, x+1, fc-fh-1, z, BlockTw.darkwoodLeaves.blockID);
+			if (world.isAirBlock(x, y+fc-fh-1, z+1))
+				this.setBlock(world, x, fc-fh-1, z+1, BlockTw.darkwoodLeaves.blockID);
 			for (int h=fc-fh;h<=fc+fh;h++){
 				for (int a=-r;a<=r;a++){
 					for (int b=-r;b<=r;b++){
