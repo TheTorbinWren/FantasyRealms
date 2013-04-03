@@ -2,7 +2,7 @@ package tw.FantasyRealms;
 
 import java.util.Random;
 
-import tw.FantasyRealms.blocks.BlockTw;
+import tw.FantasyRealms.blocks.BlockCore;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
@@ -27,7 +27,7 @@ public class WorldGenDarkwood extends WorldGenerator{
 			for (int b=-1;b<=1;b++){
 				int blockID = world.getBlockId(x+a, y, z+b);
 				if (blockID == Block.wood.blockID ||
-						blockID == BlockTw.darkwood.blockID){
+						blockID == BlockCore.darkwoodLog.blockID){
 					return false;
 				}
 			}
@@ -38,7 +38,7 @@ public class WorldGenDarkwood extends WorldGenerator{
 		if (y >= 1 && y + maxHeight + 1 <= 256 && height >= 16){
 			// generate trunk
 			for (int h = 0; h < height; h++)
-				this.setBlock(world, x, y+h, z, BlockTw.darkwood.blockID);
+				this.setBlock(world, x, y+h, z, BlockCore.darkwoodLog.blockID);
 			
 			// generate foliage
 			int r = random.nextInt(4) + 3;
@@ -46,13 +46,13 @@ public class WorldGenDarkwood extends WorldGenerator{
 			int fc = height - (fh / 2);
 			// following not working
 			if (world.isAirBlock(x-1, y+fc-fh-1, z))
-				this.setBlock(world, x-1, fc-fh-1, z, BlockTw.darkwoodLeaves.blockID);
+				this.setBlock(world, x-1, fc-fh-1, z, BlockCore.darkwoodLeaves.blockID);
 			if (world.isAirBlock(x, y+fc-fh-1, z-1))
-				this.setBlock(world, x, fc-fh-1, z-1, BlockTw.darkwoodLeaves.blockID);
+				this.setBlock(world, x, fc-fh-1, z-1, BlockCore.darkwoodLeaves.blockID);
 			if (world.isAirBlock(x+1, y+fc-fh-1, z))
-				this.setBlock(world, x+1, fc-fh-1, z, BlockTw.darkwoodLeaves.blockID);
+				this.setBlock(world, x+1, fc-fh-1, z, BlockCore.darkwoodLeaves.blockID);
 			if (world.isAirBlock(x, y+fc-fh-1, z+1))
-				this.setBlock(world, x, fc-fh-1, z+1, BlockTw.darkwoodLeaves.blockID);
+				this.setBlock(world, x, fc-fh-1, z+1, BlockCore.darkwoodLeaves.blockID);
 			for (int h=fc-fh;h<=fc+fh;h++){
 				for (int a=-r;a<=r;a++){
 					for (int b=-r;b<=r;b++){
@@ -79,7 +79,7 @@ public class WorldGenDarkwood extends WorldGenerator{
 							}
 						}
 						if (world.isAirBlock(x+a, y+h, z+b) && gf)
-							this.setBlock(world, x+a, y+h, z+b, BlockTw.darkwoodLeaves.blockID);
+							this.setBlock(world, x+a, y+h, z+b, BlockCore.darkwoodLeaves.blockID);
 					}
 				}
 			}
@@ -98,7 +98,7 @@ public class WorldGenDarkwood extends WorldGenerator{
 				block = Block.blocksList[blockID];
 			} while ((blockID == 0 || 
 					block.isLeaves(world, x, y+h-1, z) || 
-					blockID == BlockTw.darkwoodSapling.blockID) &&
+					blockID == BlockCore.darkwoodSapling.blockID) &&
 					h <= 20);
 		}
 		return h;

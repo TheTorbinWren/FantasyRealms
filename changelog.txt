@@ -1,3 +1,8 @@
+v0.3.0.3
+========
+-updated to Minecraft 1.5.1
+-darkwood leaves no longer tick - causing too much game lag in darkwood forests. will figure a better solution out later
+
 v0.2.13.2
 =========
 -changed: worldgen numbers

@@ -141,51 +141,51 @@ public class twConfig {
 		
 		Property gQuartz = configFile.get(Configuration.CATEGORY_GENERAL, "genQuartz", genQuartz);
 		gQuartz.comment = "set to false to disable quartz generation";
-		genQuartz = Boolean.parseBoolean(gQuartz.value);
+		genQuartz = gQuartz.getBoolean(genQuartz);
 		
 		Property gCopper = configFile.get(Configuration.CATEGORY_GENERAL, "genCopper", genCopper);
 		gCopper.comment = "set to false to disable copper generation";
-		genCopper = Boolean.parseBoolean(gCopper.value);
+		genCopper = gCopper.getBoolean(genCopper);
 		
 		Property gSilver = configFile.get(Configuration.CATEGORY_GENERAL, "genSilver", genSilver);
 		gSilver.comment = "set to false to disable silver generation";
-		genSilver = Boolean.parseBoolean(gSilver.value);
+		genSilver = gSilver.getBoolean(genSilver);
 		
 		Property gPlatinum = configFile.get(Configuration.CATEGORY_GENERAL, "genPlatinum", genPlatinum);
 		gPlatinum.comment = "set to false to disable platinum generation";
-		genPlatinum = Boolean.parseBoolean(gPlatinum.value);
+		genPlatinum = gPlatinum.getBoolean(genPlatinum);
 		
 		Property gColdiron = configFile.get(Configuration.CATEGORY_GENERAL, "genColdiron", genColdiron);
 		gColdiron.comment = "set to false to disable Coldiron generation";
-		genColdiron = Boolean.parseBoolean(gColdiron.value);
+		genColdiron = gColdiron.getBoolean(genColdiron);
 		
 		Property gMithral = configFile.get(Configuration.CATEGORY_GENERAL, "genMithral", genMithral);
 		gMithral.comment = "set to false to disable Mithral generation";
-		genMithral = Boolean.parseBoolean(gMithral.value);
+		genMithral = gMithral.getBoolean(genMithral);
 		
 		Property gAdamantine = configFile.get(Configuration.CATEGORY_GENERAL, "genAdamantine", genAdamantine);
 		gAdamantine.comment = "set to false to disable Adamantine generation";
-		genAdamantine = Boolean.parseBoolean(gAdamantine.value);
+		genAdamantine = gAdamantine.getBoolean(genAdamantine);
 		
 		Property gRuby = configFile.get(Configuration.CATEGORY_GENERAL, "genRuby", genRuby);
 		gRuby.comment = "set to false to disable Ruby generation";
-		genRuby = Boolean.parseBoolean(gRuby.value);
+		genRuby = gRuby.getBoolean(genRuby);
 		
 		Property gSapphire = configFile.get(Configuration.CATEGORY_GENERAL, "genSapphire", genSapphire);
 		gSapphire.comment = "set to false to disable Sapphire generation";
-		genSapphire = Boolean.parseBoolean(gSapphire.value);
+		genSapphire = gSapphire.getBoolean(genSapphire);
 		
 		Property gTopaz = configFile.get(Configuration.CATEGORY_GENERAL, "genTopaz", genTopaz);
 		gTopaz.comment = "set to false to disable Topaz generation";
-		genTopaz = Boolean.parseBoolean(gTopaz.value);
+		genTopaz = gTopaz.getBoolean(genTopaz);
 		
 		Property gAmethyst = configFile.get(Configuration.CATEGORY_GENERAL, "genAmethyst", genAmethyst);
 		gAmethyst.comment = "set to false to disable Amethyst generation";
-		genAmethyst = Boolean.parseBoolean(gAmethyst.value);
+		genAmethyst = gAmethyst.getBoolean(genAmethyst);
 		
 		Property IdDarkwood = configFile.get(Configuration.CATEGORY_GENERAL, "biomeIdDarkwood", biomeIdDarkwood);
 		IdDarkwood.comment = "ID for Daarkwood biome";
-		biomeIdDarkwood = Integer.parseInt(IdDarkwood.value);
+		biomeIdDarkwood = IdDarkwood.getInt();
 				
 		configFile.save();
 	}

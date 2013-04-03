@@ -11,20 +11,17 @@ import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class BlockDarkwoodSapling extends BlockFlowerTw {
-	public BlockDarkwoodSapling (int id, int texture){
-		super(id, texture, Material.plants);
+public class BlockDarkwoodSapling extends BlockCoreFlower {
+	public BlockDarkwoodSapling (int id, String name, String icon){
+		super(id, Material.plants, name, icon);
 		
-		setBlockName("twDarkWoodSapling");
+		setUnlocalizedName(name);
 		setHardness(0.0F);
 		setStepSound(soundGrassFootstep);
 		float bound = 0.4f;
 		this.setBlockBounds(0.5F - bound, 0.0F, 0.5F - bound, 0.5F + bound, bound * 2.0f, 0.5F + bound);
 		setCreativeTab(CreativeTabs.tabDecorations);
-		this.setRequiresSelfNotify();
-		
-		GameRegistry.registerBlock(this);
-		LanguageRegistry.addName(this, "Darkwood Sapling");
+		//this.setRequiresSelfNotify();
 	}
 	
     public void updateTick(World world, int x, int y, int z, Random random)
@@ -39,7 +36,7 @@ public class BlockDarkwoodSapling extends BlockFlowerTw {
 
                 if ((meta & 8) == 0)
                 {
-                    world.setBlockMetadataWithNotify(x, y, z, meta | 8);
+                    world.setBlockMetadataWithNotify(x, y, z, meta | 8, 0);
                 }
                 else
                 {

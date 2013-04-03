@@ -5,14 +5,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 
-public class ItemBerrySeeds extends ItemSeedsTw{
-	public ItemBerrySeeds(int id, int blockType, int soilId){
-		super(id, blockType, soilId);
+public class ItemBerrySeeds extends ItemCoreSeeds{
+	public ItemBerrySeeds(int id, int blockType, int soilId, String icon){
+		super(id, blockType, soilId, icon);
 		
 		maxStackSize = 64;
 		setCreativeTab(CreativeTabs.tabMisc);
-		setIconIndex(1);
-		setItemName("itemBerrySeeds");
+		//setIconIndex(1);
+		setUnlocalizedName("itemBerrySeeds");
 	}
 	
     @Override

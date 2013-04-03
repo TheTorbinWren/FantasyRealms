@@ -2,27 +2,31 @@ package tw.FantasyRealms.blocks;
 
 import tw.FantasyRealms.FantasyRealms;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMagicCraftingTable extends BlockContainerTw {
-	protected BlockMagicCraftingTable(int id, int texture, Material material){
-		super(id, texture, material);
-		
-		GameRegistry.registerBlock(this);
+public class BlockMagicCraftingTable extends BlockCoreContainer {
+	private Icon[] iconArray = new Icon[2];
+	
+	protected BlockMagicCraftingTable(int id, Material material, String name, String icon){
+		super(id, material, name, icon);
 	}
 
-    public int getBlockTextureFromSide(int side)
+	public Icon getBlockTextureFromSideAndMetadata(int side, int meta)
     {
     	switch (side){
-    	case 1: return 4;
-    	case 0: return 4;
-        default: return this.blockIndexInTexture;
+    	case 1: return this.iconArray[1];
+    	case 0: return this.iconArray[1];
+        default: return this.iconArray[0];
     	}
     }
-    
+        
     @Override
     public TileEntity createNewTileEntity(World world)
     {
@@ -35,5 +39,12 @@ public class BlockMagicCraftingTable extends BlockContainerTw {
     	}
     	player.openGui(FantasyRealms.instance, 0, world, x, y, z);
     	return true;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister IconRegister){
+    	this.iconArray[0] = IconRegister.registerIcon("FantasyRealms:MCTableSide");
+    	this.iconArray[1] = IconRegister.registerIcon("FantasyRealms:MCTableTop");
     }
 }

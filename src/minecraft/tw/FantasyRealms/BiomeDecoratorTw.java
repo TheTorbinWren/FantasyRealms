@@ -2,7 +2,7 @@ package tw.FantasyRealms;
 
 import java.util.Random;
 
-import tw.FantasyRealms.blocks.BlockTw;
+import tw.FantasyRealms.blocks.BlockCore;
 
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -16,7 +16,7 @@ public class BiomeDecoratorTw extends BiomeDecorator {
 	
 	protected BiomeDecoratorTw(BiomeGenBase par1BiomeGenBase){
 		super(par1BiomeGenBase);
-		bushGen = new WorldGenBush(BlockTw.bush.blockID, 1);
+		bushGen = new WorldGenBush(BlockCore.bush.blockID, 1);
 		this.bushesPerchunk = 0;
 	}
 

@@ -3,13 +3,12 @@ package tw.FantasyRealms;
 import java.io.File;
 import java.util.Random;
 
-import tw.FantasyRealms.blocks.BlockBushTw;
-import tw.FantasyRealms.blocks.BlockTw;
+import tw.FantasyRealms.blocks.BlockBerryBush;
+import tw.FantasyRealms.blocks.BlockCore;
 import tw.FantasyRealms.blocks.TileEntityMagicCraftingTable;
 import tw.FantasyRealms.core.LogTw;
 import tw.FantasyRealms.core.twConfig;
-import tw.FantasyRealms.items.ItemTw;
-
+import tw.FantasyRealms.items.ItemCore;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
@@ -36,7 +35,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="FantasyRealms", name="TheTorbinWren's Fantasy Realms", version="0.2.13.2")
+@Mod(modid="FantasyRealms", name="TheTorbinWren's Fantasy Realms", version="0.3.0.3")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FantasyRealms
 implements IFuelHandler
@@ -62,57 +61,57 @@ implements IFuelHandler
 	@Init
 	public void load(FMLInitializationEvent event) {
 		LogTw.fine("Initializing Blocks");
-		BlockTw.initBlocks();
+		BlockCore.initBlocks();
 		
 		LogTw.fine("Initializing Items");
-		ItemTw.initItems();
+		ItemCore.initItems();
 		
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 0, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 1, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 2, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 3, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 4, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 5, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 6, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 7, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 8, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 9, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.ore, 10, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.oreBlock, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.bush, "axe", 0);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.darkwood, "axe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockTw.darkwoodPlanks, "axe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 0, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 1, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 2, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 3, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 4, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 5, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 6, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 7, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 8, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 9, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.ore, 10, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.oreBlock, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.bush, "axe", 0);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.darkwoodLog, "axe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockCore.darkwoodPlanks, "axe", 2);
 		
-		OreDictionary.registerOre("logWood", new ItemStack(BlockTw.darkwood));
-		OreDictionary.registerOre("plankWood", new ItemStack(BlockTw.darkwoodPlanks));
-		OreDictionary.registerOre("stickWood", new ItemStack(ItemTw.darkwoodSticks));
-		OreDictionary.registerOre("treeSapling", new ItemStack(BlockTw.darkwoodSapling));
-		OreDictionary.registerOre("treeLeaves", new ItemStack(BlockTw.darkwoodLeaves));
-		OreDictionary.registerOre("oreQuartz", new ItemStack(ItemTw.quartz));
-		OreDictionary.registerOre("oreCopper", new ItemStack(BlockTw.ore, 1, 1));
-		OreDictionary.registerOre("oreSilver", new ItemStack(BlockTw.ore, 1, 2));
-		OreDictionary.registerOre("orePlatinum", new ItemStack(BlockTw.ore, 1, 3));
-		OreDictionary.registerOre("oreColdSteel", new ItemStack(BlockTw.ore, 1, 4));
-		OreDictionary.registerOre("oreMithral", new ItemStack(BlockTw.ore, 1, 5));
-		OreDictionary.registerOre("oreAdamantine", new ItemStack(BlockTw.ore, 1, 6));
-		OreDictionary.registerOre("oreRuby", new ItemStack(ItemTw.ruby));
-		OreDictionary.registerOre("oreSapphire", new ItemStack(ItemTw.sapphire));
-		OreDictionary.registerOre("oreTopaz", new ItemStack(ItemTw.topaz));
-		OreDictionary.registerOre("oreAmethyst", new ItemStack(ItemTw.amethyst));
-		OreDictionary.registerOre("ingotCopper", new ItemStack(ItemTw.ingotCopper));
-		OreDictionary.registerOre("ingotSilver", new ItemStack(ItemTw.ingotSilver));
-		OreDictionary.registerOre("ingotPlatinum", new ItemStack(ItemTw.ingotPlatinum));
-		OreDictionary.registerOre("ingotColdiron", new ItemStack(ItemTw.ingotColdiron));
-		OreDictionary.registerOre("ingotMithral", new ItemStack(ItemTw.ingotMithral));
-		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemTw.ingotAdamantine));
-		OreDictionary.registerOre("ingotElectrum", new ItemStack(ItemTw.ingotElectrum));
-		OreDictionary.registerOre("nuggetCopper", new ItemStack(ItemTw.nuggetCopper));
-		OreDictionary.registerOre("nuggetSilver", new ItemStack(ItemTw.nuggetSilver));
-		OreDictionary.registerOre("nuggetPlatinum", new ItemStack(ItemTw.nuggetPlatinum));
-		OreDictionary.registerOre("nuggetColdiron", new ItemStack(ItemTw.nuggetColdiron));
-		OreDictionary.registerOre("nuggetMithral", new ItemStack(ItemTw.nuggetMithral));
-		OreDictionary.registerOre("nuggetAdamantine", new ItemStack(ItemTw.nuggetAdamantine));
-		OreDictionary.registerOre("nuggetElectrum", new ItemStack(ItemTw.nuggetElectrum));
+		OreDictionary.registerOre("logWood", new ItemStack(BlockCore.darkwoodLog));
+		OreDictionary.registerOre("plankWood", new ItemStack(BlockCore.darkwoodPlanks));
+		OreDictionary.registerOre("stickWood", new ItemStack(ItemCore.darkwoodSticks));
+		OreDictionary.registerOre("treeSapling", new ItemStack(BlockCore.darkwoodSapling));
+		OreDictionary.registerOre("treeLeaves", new ItemStack(BlockCore.darkwoodLeaves));
+		OreDictionary.registerOre("oreQuartz", new ItemStack(ItemCore.quartz));
+		OreDictionary.registerOre("oreCopper", new ItemStack(BlockCore.ore, 1, 1));
+		OreDictionary.registerOre("oreSilver", new ItemStack(BlockCore.ore, 1, 2));
+		OreDictionary.registerOre("orePlatinum", new ItemStack(BlockCore.ore, 1, 3));
+		OreDictionary.registerOre("oreColdSteel", new ItemStack(BlockCore.ore, 1, 4));
+		OreDictionary.registerOre("oreMithral", new ItemStack(BlockCore.ore, 1, 5));
+		OreDictionary.registerOre("oreAdamantine", new ItemStack(BlockCore.ore, 1, 6));
+		OreDictionary.registerOre("oreRuby", new ItemStack(ItemCore.ruby));
+		OreDictionary.registerOre("oreSapphire", new ItemStack(ItemCore.sapphire));
+		OreDictionary.registerOre("oreTopaz", new ItemStack(ItemCore.topaz));
+		OreDictionary.registerOre("oreAmethyst", new ItemStack(ItemCore.amethyst));
+		OreDictionary.registerOre("ingotCopper", new ItemStack(ItemCore.ingotCopper));
+		OreDictionary.registerOre("ingotSilver", new ItemStack(ItemCore.ingotSilver));
+		OreDictionary.registerOre("ingotPlatinum", new ItemStack(ItemCore.ingotPlatinum));
+		OreDictionary.registerOre("ingotColdiron", new ItemStack(ItemCore.ingotColdiron));
+		OreDictionary.registerOre("ingotMithral", new ItemStack(ItemCore.ingotMithral));
+		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemCore.ingotAdamantine));
+		OreDictionary.registerOre("ingotElectrum", new ItemStack(ItemCore.ingotElectrum));
+		OreDictionary.registerOre("nuggetCopper", new ItemStack(ItemCore.nuggetCopper));
+		OreDictionary.registerOre("nuggetSilver", new ItemStack(ItemCore.nuggetSilver));
+		OreDictionary.registerOre("nuggetPlatinum", new ItemStack(ItemCore.nuggetPlatinum));
+		OreDictionary.registerOre("nuggetColdiron", new ItemStack(ItemCore.nuggetColdiron));
+		OreDictionary.registerOre("nuggetMithral", new ItemStack(ItemCore.nuggetMithral));
+		OreDictionary.registerOre("nuggetAdamantine", new ItemStack(ItemCore.nuggetAdamantine));
+		OreDictionary.registerOre("nuggetElectrum", new ItemStack(ItemCore.nuggetElectrum));
 		
 		RecipeManager.InitRecipes();
 		
@@ -141,10 +140,10 @@ implements IFuelHandler
 	@ForgeSubscribe
 	public void onUseBonemeal(BonemealEvent event){
 		int blockID = event.world.getBlockId(event.X, event.Y, event.Z);
-		if (blockID == BlockTw.bush.blockID){
-			((BlockBushTw)BlockTw.bush).fertalize(event.world, event.X, event.Y, event.Z);
+		if (blockID == BlockCore.bush.blockID){
+			((BlockBerryBush)BlockCore.bush).fertalize(event.world, event.X, event.Y, event.Z);
 			event.setResult(Result.ALLOW);
-		} else if (blockID == BlockTw.darkwoodSapling.blockID){
+		} else if (blockID == BlockCore.darkwoodSapling.blockID){
 			if (new WorldGenDarkwood().grow(event.world, event.world.rand, event.X, event.Y, event.Z))
 				event.setResult(Result.ALLOW);
 		}
@@ -153,9 +152,9 @@ implements IFuelHandler
 	@Override
 	public int getBurnTime(ItemStack fuel) {
 		//System.out.println("test");
-		if (fuel.itemID == BlockTw.darkwoodSapling.blockID)
+		if (fuel.itemID == BlockCore.darkwoodSapling.blockID)
 			return 100;
-		else if (fuel.itemID == ItemTw.darkwoodSticks.itemID)
+		else if (fuel.itemID == ItemCore.darkwoodSticks.itemID)
 			return 100;
 		else
 			return 0;

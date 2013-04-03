@@ -8,24 +8,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class ItemWand extends ItemTw {
+public class ItemWand extends ItemCore {
 	
-	public static Item zombie = new ItemWand(twConfig.itemIdWandZombieFlesh, 0, "twWandZombie", "Wand of Zombie Flesh");
-	public static Item feather = new ItemWand(twConfig.itemIdWandFeather, 1, "twWandFeather", "Wand of Feathers");
-	public static Item creeper = new ItemWand(twConfig.itemIdWandCreeper, 2, "twWandCreeper", "Boomstick Wand");
-	public static Item slime = new ItemWand(twConfig.itemIdWandSlime, 3, "twWandSlime", "Wand of Slime");
-	public static Item skeleton = new ItemWand(twConfig.itemIdWandSkeleton, 4, "twWandSkeleton", "Skeletal Wand");
+	public static Item zombie = new ItemWand(twConfig.itemIdWandZombieFlesh, "twWandZombie", "Wand of Zombie Flesh", "WandRottenFlesh");
+	public static Item feather = new ItemWand(twConfig.itemIdWandFeather, "twWandFeather", "Wand of Feathers", "WandFeather");
+	public static Item creeper = new ItemWand(twConfig.itemIdWandCreeper, "twWandCreeper", "Boomstick Wand", "WandGunpowder");
+	public static Item slime = new ItemWand(twConfig.itemIdWandSlime, "twWandSlime", "Wand of Slime", "WandSlime");
+	public static Item skeleton = new ItemWand(twConfig.itemIdWandSkeleton, "twWandSkeleton", "Skeletal Wand", "WandBone");
 	
-	public ItemWand(int id, int icon, String iName, String name){
-		super(id);
-		this.setIconIndex(icon);
-		this.setItemName(iName);
+	public ItemWand(int id, String iName, String name, String icon){
+		super(id, icon);
+		this.setUnlocalizedName(iName);
 		LanguageRegistry.addName(this, name);
-	}
-	
-	@Override
-	public String getTextureFile () {
-		return CommonProxy.WANDS_PNG;
 	}
 	
 	@Override

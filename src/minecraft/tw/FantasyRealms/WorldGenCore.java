@@ -2,7 +2,7 @@ package tw.FantasyRealms;
 
 import java.util.Random;
 
-import tw.FantasyRealms.blocks.BlockTw;
+import tw.FantasyRealms.blocks.BlockCore;
 import tw.FantasyRealms.core.twConfig;
 
 import net.minecraft.world.World;
@@ -31,17 +31,17 @@ implements IWorldGenerator {
 		int numBushes = 0;
 		int numDarkwoodTrees = 0;
 		
-		WorldGenOre quartzGen = new WorldGenOre(twConfig.genQuartz, BlockTw.ore.blockID, 0, random.nextInt(8), 4, 0, 60);
-		WorldGenOre copperGen = new WorldGenOre(twConfig.genCopper, BlockTw.ore.blockID, 1, random.nextInt(10)+10, 6, 0, 60);
-		WorldGenOre silverGen = new WorldGenOre(twConfig.genSilver, BlockTw.ore.blockID, 2, random.nextInt(5)+10, 4, 0, 40);
-		WorldGenOre platinumGen = new WorldGenOre(twConfig.genPlatinum, BlockTw.ore.blockID, 3, random.nextInt(4), 4, 0, 20);
-		WorldGenOre coldironGen = new WorldGenOre(twConfig.genColdiron, BlockTw.ore.blockID, 4, 0, 6, 0, 25);
-		WorldGenOre mithralGen = new WorldGenOre(twConfig.genMithral, BlockTw.ore.blockID, 5, 0, 2, 0, 15);
-		WorldGenOre adamantineGen = new WorldGenOre(twConfig.genAdamantine, BlockTw.ore.blockID, 6, 0, 1, 0, 15);
-		WorldGenOre rubyGen = new WorldGenOre(twConfig.genRuby, BlockTw.ore.blockID, 7, random.nextInt(3)+3, 2, 0, 40);
-		WorldGenOre sapphireGen = new WorldGenOre(twConfig.genSapphire, BlockTw.ore.blockID, 8, random.nextInt(3)+3, 2, 0, 40);
-		WorldGenOre topazGen = new WorldGenOre(twConfig.genTopaz, BlockTw.ore.blockID, 9, random.nextInt(3)+3, 2, 0, 40);
-		WorldGenOre amethystGen = new WorldGenOre(twConfig.genAmethyst, BlockTw.ore.blockID, 10, random.nextInt(5)+5, 4, 0, 60);
+		WorldGenOre quartzGen = new WorldGenOre(twConfig.genQuartz, BlockCore.ore.blockID, 0, random.nextInt(8), 4, 0, 60);
+		WorldGenOre copperGen = new WorldGenOre(twConfig.genCopper, BlockCore.ore.blockID, 1, random.nextInt(10)+10, 6, 0, 60);
+		WorldGenOre silverGen = new WorldGenOre(twConfig.genSilver, BlockCore.ore.blockID, 2, random.nextInt(5)+10, 4, 0, 40);
+		WorldGenOre platinumGen = new WorldGenOre(twConfig.genPlatinum, BlockCore.ore.blockID, 3, random.nextInt(4), 4, 0, 20);
+		WorldGenOre coldironGen = new WorldGenOre(twConfig.genColdiron, BlockCore.ore.blockID, 4, 0, 6, 0, 25);
+		WorldGenOre mithralGen = new WorldGenOre(twConfig.genMithral, BlockCore.ore.blockID, 5, 0, 2, 0, 15);
+		WorldGenOre adamantineGen = new WorldGenOre(twConfig.genAdamantine, BlockCore.ore.blockID, 6, 0, 1, 0, 15);
+		WorldGenOre rubyGen = new WorldGenOre(twConfig.genRuby, BlockCore.ore.blockID, 7, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre sapphireGen = new WorldGenOre(twConfig.genSapphire, BlockCore.ore.blockID, 8, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre topazGen = new WorldGenOre(twConfig.genTopaz, BlockCore.ore.blockID, 9, random.nextInt(3)+3, 2, 0, 40);
+		WorldGenOre amethystGen = new WorldGenOre(twConfig.genAmethyst, BlockCore.ore.blockID, 10, random.nextInt(5)+5, 4, 0, 60);
 		
 		BiomeGenBase biome = world.getBiomeGenForCoords(blockX, blockZ);
 		switch (biome.biomeID){
@@ -328,7 +328,7 @@ implements IWorldGenerator {
 			x = blockX + random.nextInt(16) + 8;
 			z = blockZ + random.nextInt(16) + 8;
 			y = world.getHeightValue(x, z);
-			new WorldGenBush(BlockTw.bush.blockID, 1).generate(world, random, x, y, z);
+			new WorldGenBush(BlockCore.bush.blockID, 1).generate(world, random, x, y, z);
 		}
 		
 	}

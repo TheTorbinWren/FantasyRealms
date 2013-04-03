@@ -5,6 +5,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
 	
+	/*
 	@Override
 	public void registerRenderers() {
 		MinecraftForgeClient.preloadTexture(ITEMS_PNG);
@@ -12,5 +13,6 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.preloadTexture(WANDS_PNG);
 		MinecraftForgeClient.preloadTexture(STAFFS_PNG);
 	}
+	*/
 	
 }

@@ -16,22 +16,20 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDarkwoodLeaves extends BlockLeavesBaseTw {
+public class BlockDarkwoodLeaves extends BlockCoreLeaves {
     int[] adjacentTreeBlocks;
 
-	public BlockDarkwoodLeaves(int id, int texture){
-		super(id, texture, Material.leaves, true);
+	public BlockDarkwoodLeaves(int id, String icon){
+		super(id, Material.leaves, true, icon);
 		
-		this.setBlockName("twDarkwoodLeaves");
+		this.setUnlocalizedName("twDarkwoodLeaves");
 		this.setHardness(0.2f);
 		this.setLightOpacity(1);
 		this.setStepSound(soundGrassFootstep);
-		this.setRequiresSelfNotify();
-		this.setTickRandomly(true);
+		//this.setRequiresSelfNotify();
+		//this.setTickRandomly(true);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		
-		GameRegistry.registerBlock(this);
-		LanguageRegistry.addName(this, "Darkwood Leaves");
 	}
 	
     @SideOnly(Side.CLIENT)
@@ -100,7 +98,7 @@ public class BlockDarkwoodLeaves extends BlockLeavesBaseTw {
     }
 
     public int idDropped(int meta, Random random, int var3){
-    	return BlockTw.darkwoodSapling.blockID;
+    	return BlockCore.darkwoodSapling.blockID;
     }
     
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
@@ -225,7 +223,7 @@ public class BlockDarkwoodLeaves extends BlockLeavesBaseTw {
 
                 if (var12 >= 0)
                 {
-                    par1World.setBlockMetadata(par2, par3, par4, var6 & -9);
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6 & -9, 0);
                 }
                 else
                 {
@@ -263,13 +261,13 @@ public class BlockDarkwoodLeaves extends BlockLeavesBaseTw {
     private void removeLeaves(World par1World, int par2, int par3, int par4)
     {
         this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-        par1World.setBlockWithNotify(par2, par3, par4, 0);
+        par1World.setBlock(par2, par3, par4, 0);
     }
     
     @Override
     public void beginLeavesDecay(World world, int x, int y, int z)
     {
-        world.setBlockMetadata(x, y, z, world.getBlockMetadata(x, y, z) | 8);
+        world.setBlockMetadataWithNotify(x, y, z, world.getBlockMetadata(x, y, z) | 8, 0);
     }
 
     @Override

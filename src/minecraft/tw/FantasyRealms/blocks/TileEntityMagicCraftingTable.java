@@ -159,4 +159,16 @@ implements IInventory {
 	public void onInventoryChanged(){
 		// TODO stuff
 	}
+
+	@Override
+	public boolean isInvNameLocalized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
