@@ -1,11 +1,14 @@
 package tw.FantasyRealms.core;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.ConfigCategory;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 
 public class twConfig {
 	private static Configuration configFile;
+	
+	//private static ConfigCategory CATEGORY_BIOME = new ConfigCategory("Biomes");
 	
 	private static int baseWands = 23100;
 	private static int baseStaffs = 23300;
@@ -79,6 +82,7 @@ public class twConfig {
 	public static boolean genAmethyst = true;
 	
 	public static int biomeIdDarkwood = 90;
+	public static int biomeIdMysticMountains = 91;
 
 	
 	public static void load(FMLPreInitializationEvent event){
@@ -186,7 +190,11 @@ public class twConfig {
 		Property IdDarkwood = configFile.get(Configuration.CATEGORY_GENERAL, "biomeIdDarkwood", biomeIdDarkwood);
 		IdDarkwood.comment = "ID for Daarkwood biome";
 		biomeIdDarkwood = IdDarkwood.getInt();
-				
+
+		Property IdMysticMountains = configFile.get(Configuration.CATEGORY_GENERAL, "biomeIdMsticMountains", biomeIdMysticMountains);
+		IdMysticMountains.comment = "ID for Mystic Mountains biome";
+		biomeIdMysticMountains = IdMysticMountains.getInt();
+		
 		configFile.save();
 	}
 }

@@ -58,10 +58,9 @@
       <copy todir="${build.dir}/tw/FantasyRealms/gfx">
          <fileset dir="${mcp.dir}/src/minecraft/tw/FantasyRealms/gfx" />
       </copy>
-      <copy todir="${build.dir}/mods">
-         <fileset dir="${mcp.dir}/src/minecraft/tw/FantasyRealms/mods" />
+      <copy todir="${build.dir}/mods/FantasyRealms">
+      	<fileset dir="${mcp.dir}/src/minecraft/mods/FantasyRealms" />
       </copy>
-      <!-- Copy other stuff specific to your project -->
    </target>
  
    <target name="all" description="Perform all tasks for a build" depends="init, recompile, reobfuscate, stage, jarzip">
